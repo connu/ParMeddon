@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+
+    <!-- css -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/home.css') }}">
+
+</head>
+<body style="background-size: 1450px 1900px; background-image: url({{ url_for('static', filename='images/flower-login.jpeg') }})">
+    <form class="just">
+        <div class="l"  id="log-in-form" style="align-items: center;">
+            <!-- <h1 style="position: absolute; left: 500px; top: 2px; font-family: 'Noto Sans JP', sans-serif; color: #94d0cc;">Log In</h1> -->
+
+            <div style="align-items: center; align-content: center;">
+                <label style="position: absolute; top: 90px; left: 200px; font-size: 18px; " >Email</label>
+                <input style="position: absolute; top: 120px; left: 200px;  width: 50%;"  name="email" type="email" class="form-control login-input">
+            </div>
+            
+            <div>
+                <label style="position: absolute; top: 190px; left: 200px; font-size: 18px;">Password</label>
+                <input style="position: absolute; top: 220px; left: 200px; width: 50%;" name="password" type="password" class="form-control">
+            </div>
+
+            <button type="submit" class="btn btn-outline-success" style="position: absolute; top: 300px; left: 300px; color: #1d706b; background-color: #94d0cc;">Log In</button>
+        </div>
+    </form>
+
+
+    <script src="{{ url_for('static', filename='js/home.js') }}"></script>
+</body>
+</html>
