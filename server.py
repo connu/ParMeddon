@@ -6,7 +6,7 @@ from datetime import datetime
 from functools import wraps
 from werkzeug.security import check_password_hash, generate_password_hash
 from flask import g
-import os
+from os import path, walk
 
 import json
 
@@ -16,7 +16,7 @@ tasks_count_for_the_specific_user = 0
 
 
 app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY')
-app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URL')
+app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get("DATABASE_URL",  "sqlite:///users.db")
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 db = SQLAlchemy(app)
@@ -83,25 +83,26 @@ def login_required(f):
         return f(*args, **kwargs)
     return decorated_function
 
-
 @app.route('/', methods=['POST', 'GET'])
 def home():
     if 'email'  and 'username' and 'password' in request.args:
         if request.args['email'] or request.args['password'] or request.args['username'] == "":
-            return 'fill the whole form'
-
-        elif 'email'  and 'username' and 'password' in request.args:
+              return ' fill the whole form'
+            
+        else:
             password = generate_password_hash(request.args['password'], method='pbkdf2:sha256',salt_length=8)
-            new_user = Users(
-                    email=request.args['email'],
-                    password=password,
-                    username=request.args['username']
-                )   
 
+            new_user = Users(
+                email=request.args['email'],
+                password=password,
+                username=request.args['username']
+            )
+            
             db.session.add(new_user)
             db.session.commit()
             login_user(new_user)
             return redirect(url_for('dashboard'))
+          
     return render_template('index.html', is_authenticated=current_user.is_authenticated)
 
 @app.route('/login', methods=['POST','GET'])
@@ -186,6 +187,7 @@ def logout():
 
 if __name__ == "__main__":
     app.run()
+
 
 
 
