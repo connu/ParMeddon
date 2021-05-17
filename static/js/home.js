@@ -3,10 +3,12 @@ function detect()
     document.addEventListener("mouseup", function(event) {
         var obj = document.getElementsByClassName('jus')[0].getElementsByClassName('f')[0];
         var sign_btn = document.getElementsByClassName('sign-up')[0]
+        var login = document.getElementsByClassName('log-in')[0]
+
 
         if (!obj.contains(event.target)) {
             sign_btn.style.display = 'block'
-            sign_btn.style.display = 'block'
+            login.style.display = 'block'
             obj.style.display = 'none'
         }
     });
@@ -41,10 +43,12 @@ function detect_l()
     document.addEventListener("mouseup", function(event) {
         var obj = document.getElementsByClassName('jus')[0].getElementsByClassName('f')[0];
         var login = document.getElementsByClassName('log-in')[0]
+        var sign = document.getElementsByClassName('sign-up')[0]
+
 
         if (!obj.contains(event.target)) {
             login.style.display = 'block'
-            login.style.display = 'block'
+            sign.style.display = 'block'
             obj.style.display = 'none'
         }
     });

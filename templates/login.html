@@ -11,6 +11,16 @@
 
 </head>
 <body style="background-size: 1450px 1900px; background-image: url({{ url_for('static', filename='images/flower-login.jpeg') }})">
+
+    <div class="col-lg-8">
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+          {% for message in messages %}
+           <p>{{ message }}</p>
+          {% endfor %}
+        {% endif %}
+        {% endwith %}
+    </div>
     <form class="just">
         <div class="l"  id="log-in-form" style="align-items: center;">
             <!-- <h1 style="position: absolute; left: 500px; top: 2px; font-family: 'Noto Sans JP', sans-serif; color: #94d0cc;">Log In</h1> -->
