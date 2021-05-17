@@ -111,6 +111,11 @@ def login():
         elif check_password_hash(login_usern.password, request.args['password']):
             login_user(login_usern)
             return redirect(url_for('dashboard'))
+        
+        elif check_password_hash(login_usern.password, request.args['password']):
+            flash('Wrong Credentials')
+            return redirect(url_for('login'))
+            
 
     return render_template('login.html', is_authenticated=current_user.is_authenticated)
 
