@@ -85,11 +85,7 @@ def login_required(f):
 
 @app.route('/', methods=['POST', 'GET'])
 def home():
-    if 'email'  and 'username' and 'password' in request.args:
-        if request.args['email'] or request.args['password'] or request.args['username'] == "":
-              return ' fill the whole form'
-            
-        else:
+    if 'email'  and 'username' and 'password' in request.args:         
             password = generate_password_hash(request.args['password'], method='pbkdf2:sha256',salt_length=8)
 
             new_user = Users(
