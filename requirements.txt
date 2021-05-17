@@ -34,9 +34,7 @@ WTForms==2.3.3
 yarl==1.6.3
 
 
-Jinja2==2.11.2
 requests==2.24.0
 
 
-visitor==0.1.3
 
