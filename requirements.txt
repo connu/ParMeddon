@@ -28,7 +28,7 @@ Pillow==8.2.0
 praw==7.2.0
 prawcore==2.0.0
 pyobjc==7.1
-pyobjc-core==7.1
+pyobjc-core==7.2
 pyobjc-framework-Accessibility==7.1
 pyobjc-framework-Accounts==7.1
 pyobjc-framework-AddressBook==7.1
