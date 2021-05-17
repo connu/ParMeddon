@@ -6,7 +6,7 @@ from datetime import datetime
 from functools import wraps
 from werkzeug.security import check_password_hash, generate_password_hash
 from flask import g
-from os import path, walk
+import os
 
 import json
 
