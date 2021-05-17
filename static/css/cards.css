@@ -79,6 +79,17 @@ a {
     color: #7a7a8c;
 }
 
+
+.btn-outline-light {
+    color: #f8f9fa;
+    border-color: #f8f9fa;
+}
+.btn-outline-light:hover {
+    color: rgb(235, 221, 221);
+    background-color: #f8f9fa;
+    border-color: #f8f9fa;
+}
+
 .card-header h2 {
     font-size: 20px;
     margin: .25rem 0 auto;
@@ -88,6 +99,29 @@ a {
     display: block;
     cursor: pointer;
 }
+
+
+
+.btn {
+    display: inline-block;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #e2ebf5;
+    text-align: center;
+    text-decoration: none;
+    vertical-align: middle;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+    background-color: transparent;
+    border: 1px solid;
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    border-radius: 0.25rem;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
 
 .card-header h2:hover {
     background: linear-gradient(90deg,#ff8a00,#e52e71);

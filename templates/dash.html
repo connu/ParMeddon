@@ -11,6 +11,7 @@
       href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700&display=swap"
       rel="stylesheet"
     />
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"> -->
     <link rel="stylesheet" href="{{ url_for('static', filename='css/dash.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/cards.css') }}">
 
@@ -99,7 +100,7 @@
     
     
           <li class="nav-item">
-            <a href="{{ url_for('convince') }} " class="nav-link">
+            <a href="{{ url_for('logout') }} " class="nav-link">
               <svg
               aria-hidden="true"
               focusable="false"
@@ -123,7 +124,7 @@
                 ></path>
               </g>
             </svg>
-              <span class="link-text">Convince</span>
+              <span class="link-text">Log Out</span>
             </a>
           </li>
         </ul>
@@ -168,6 +169,8 @@
         </article>
       {% endfor %}
 
+
+      <a href="{{ url_for('task') }}" class="btn btn-outline-light" style="position: absolute; bottom: 0px; right: 0px;">Add A New Task</a>
       <script src="{{ url_for('static', filename='js/parmeddon.js') }}"></script>
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         

@@ -12,7 +12,7 @@
 </head>
 <body style="background-size: 1450px 1900px; background-image: url({{ url_for('static', filename='images/flower-login.jpeg') }})">
 
-    <div class="col-lg-8">
+    <div class="col-lg-8" style="top: 50px; right: 610px;">
         {% with messages = get_flashed_messages() %}
         {% if messages %}
           {% for message in messages %}

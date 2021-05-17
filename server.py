@@ -109,17 +109,12 @@ def home():
 def login(): 
     if 'email' and 'password' in request.args: 
         login_usern = db.session.query(Users).filter_by(email=request.args['email']).first()
-
-        if  login_usern == False:
-            return 'sorry no user found'
-
-        if str(request.args['password']) == login_usern.password:
-            login_user(login_usern)
-            return redirect(url_for('dashboard'))
-
-        else:
+        if not login_usern:
             flash('Wrong Credentials')
             return redirect(url_for('login'))
+        elif check_password_hash(login_usern.password, request.args['password']):
+            login_user(login_usern)
+            return redirect(url_for('dashboard'))
 
     return render_template('login.html', is_authenticated=current_user.is_authenticated)
 
@@ -185,6 +180,10 @@ def task():
        
     return render_template('newtask.html')
     
+@app.route('/logout')
+def logout():
+    logout_user()
+    return redirect(url_for('home'))
 
 if __name__ == "__main__":
     app.run(debug="true")
