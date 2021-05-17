@@ -127,12 +127,7 @@ pythonenv*
 
 # Spyder project settings
 .spyderproject
-<<<<<<< Updated upstream
 git pull --rebase origin branchname
-=======
-.spyproject
->>>>>>> Stashed changes
-
 # Rope project settings
 .ropeproject
 
@@ -161,4 +156,4 @@ Thumbs.db
 
 
 # End of https://www.toptal.com/developers/gitignore/api/flaskd
-#this is a struggle
+#this is a strugglegit fetch --all

@@ -83,26 +83,25 @@ def login_required(f):
         return f(*args, **kwargs)
     return decorated_function
 
+
 @app.route('/', methods=['POST', 'GET'])
 def home():
     if 'email'  and 'username' and 'password' in request.args:
         if request.args['email'] or request.args['password'] or request.args['username'] == "":
+            return 'fill the whole form'
 
+        elif 'email'  and 'username' and 'password' in request.args:
             password = generate_password_hash(request.args['password'], method='pbkdf2:sha256',salt_length=8)
-
             new_user = Users(
-                email=request.args['email'],
-                password=password,
-                username=request.args['username']
-            )
+                    email=request.args['email'],
+                    password=password,
+                    username=request.args['username']
+                )   
 
-        else:
-            return ' fill the whole form'
-
-        db.session.add(new_user)
-        db.session.commit()
-        login_user(new_user)
-        return redirect(url_for('dashboard'))
+            db.session.add(new_user)
+            db.session.commit()
+            login_user(new_user)
+            return redirect(url_for('dashboard'))
     return render_template('index.html', is_authenticated=current_user.is_authenticated)
 
 @app.route('/login', methods=['POST','GET'])
