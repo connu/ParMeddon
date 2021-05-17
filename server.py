@@ -51,7 +51,7 @@ class Notes(db.Model):
     note = db.Column(db.String(2000), nullable=True, unique=False)
 
     user_id = db.Column(db.Integer, db.ForeignKey('users.id'))
-
+db.create_all()
 
 @app.route('/delete', methods=["POST","GET"])
 def delete():
