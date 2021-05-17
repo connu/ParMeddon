@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+
+    <!-- css files -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/home.css') }}">
+
+    <!-- fonts from google -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300&display=swap" rel="stylesheet"> 
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+ 
+</head>
+<body>
+
+    <div id="opening-image-holder">
+        <img src="{{ url_for('static', filename='images/homepage-flower.jpeg') }}" alt="flower-opening" id="show-main-flow">
+    </div>
+
+    <button  class="sign-up btne btn-outline-primary" onclick="display_s(); detect()">Sign Up</button>
+    <a class="log-in btn btn-outline-light"  style="font-family: 'Roboto', sans-serif;;" href="{{ url_for('login') }}">Log In</a>
+
+    <form class="jus">
+        <div class="f" style="display: none; " id="sign" style="align-items: center;">
+            <h1 style="position: absolute; left: 140px; top: 2px; font-family: 'Noto Sans JP', sans-serif; color: #94d0cc;">Sign Up</h1>
+            <div style="align-items: center; align-content: center;">
+                <label style="position: absolute; top: 80px;">Email</label>
+                <input style="position: absolute; top: 100px;" name="email" type="email" class="form-control">
+            </div>
+            <div>
+                <label style="position: absolute; top: 170px;">Password</label>
+                <input style="position: absolute; top: 190px;" name="password" type="password" class="form-control">
+            </div>
+            <div>
+                <label style="position: absolute; top: 270px;">Username</label>
+                <input style="position: absolute; top: 290px;" name="username" type="text" class="form-control">
+            </div>
+
+            <button type="submit" class="btn btn-outline-success" style="position: absolute; top: 400px; left: 170px;">Sign Up</button>
+        </div>
+    </form>
+
+    <script src="{{ url_for('static', filename='js/home.js') }}"></script>
+</body>
+</html>
