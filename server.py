@@ -55,11 +55,13 @@ db.create_all()
 
 @app.route('/delete', methods=["POST","GET"])
 def delete():
+    g.user = current_user.get_id()
     if request.method == "POST":
         task = request.form['javascript_data']
+        db_tasks = db.session.query(Tasks).filter_by(text=task, author_id=g.user).first()
 
 
-        db_tasks = db.session.query(Tasks).filter_by(text=task).first()
+
         if db_tasks:
             db.session.delete(db_tasks)
             db.session.commit()
