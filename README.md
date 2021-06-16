@@ -3,7 +3,7 @@
 1. Why I Made The Porject
 in my experience task mangers have always been boring and a very plain experience, you cany just quickly access your tasks and the design may be good but feels plain while using, the answer to all that, is putting the tasks in a card.
 
-<img></img>
+![](6B17513F-190A-490A-910C-BC2503A45459_1_105_c.jpeg)
 
 
 2. Frameworks and Libraries used to make the project 
