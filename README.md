@@ -2,7 +2,7 @@
 
 1. Why I Made The Project
 
-in my experience task mangers have always been boring and a very plain experience, you cany just quickly access your tasks and the design may be good but feels plain while using, the answer to all that, is putting the tasks in a card.
+in my experience task mangers have always been boring and a very plain experience, you cant just quickly access your tasks and the design may be good but feels plain while using, the answer to all that, is putting the tasks in a card. (Hopefully.)
 
 ![](6B17513F-190A-490A-910C-BC2503A45459_1_105_c.jpeg)
 
