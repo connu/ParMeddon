@@ -9,7 +9,7 @@ in my experience task mangers have always been boring and a very plain experienc
 
 2. Frameworks and Libraries used to make the project 
 
-I used Flask for the application, and SQLalchemy for the database. JavaScript to detect when a task has been deleted and which task. Plain CSS and HTML for the webpages.
+I used Flask for the backend, and SQLalchemy for the database. JavaScript to detect when a task has been deleted and which task. Plain CSS and HTML for the webpages.
 
 3. How to use
 
